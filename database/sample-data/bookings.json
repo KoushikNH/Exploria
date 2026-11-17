@@ -1,0 +1,31 @@
+
+[
+  {
+    "_id": "BOOKING001",
+    "userId": "USER001",
+    "bookingType": "vehicle",
+    "itemId": "VEHICLE001",
+    "startDate": "2026-12-01T09:00:00Z",
+    "endDate": "2026-12-03T09:00:00Z",
+    "numberOfPeople": 2,
+    "totalAmount": 1000,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "createdAt": "2026-11-18T10:00:00Z",
+    "updatedAt": "2026-11-18T10:00:00Z"
+  },
+  {
+    "_id": "BOOKING002",
+    "userId": "USER001",
+    "bookingType": "experience",
+    "itemId": "EXP001",
+    "startDate": "2026-12-05T10:00:00Z",
+    "endDate": "2026-12-05T12:00:00Z",
+    "numberOfPeople": 2,
+    "totalAmount": 1000,
+    "bookingStatus": "pending",
+    "paymentStatus": "unpaid",
+    "createdAt": "2026-11-18T11:00:00Z",
+    "updatedAt": "2026-11-18T11:00:00Z"
+  }
+]

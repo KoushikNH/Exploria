@@ -1,0 +1,19 @@
+
+[
+  {
+    "_id": "EXP001",
+    "hostId": "USER002",
+    "destinationId": "DEST001",
+    "title": "Traditional Tulu Food Experience",
+    "description": "Explore local Tulu cuisine and learn about traditional coastal food.",
+    "category": "Food and Culture",
+    "pricePerPerson": 500,
+    "durationHours": 2,
+    "maxParticipants": 8,
+    "languages": ["Kannada", "Tulu", "English"],
+    "images": [],
+    "isActive": true,
+    "createdAt": "2026-11-18T10:00:00Z",
+    "updatedAt": "2026-11-18T10:00:00Z"
+  }
+]

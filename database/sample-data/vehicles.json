@@ -1,0 +1,35 @@
+
+[
+  {
+    "_id": "VEHICLE001",
+    "ownerId": "USER002",
+    "vehicleName": "Honda Activa",
+    "vehicleType": "Scooter",
+    "registrationNumber": "KA19AB1234",
+    "capacity": 2,
+    "pricePerDay": 500,
+    "fuelType": "Petrol",
+    "city": "Mangaluru",
+    "features": ["Helmet", "Mobile Holder"],
+    "images": [],
+    "isAvailable": true,
+    "createdAt": "2026-11-18T10:00:00Z",
+    "updatedAt": "2026-11-18T10:00:00Z"
+  },
+  {
+    "_id": "VEHICLE002",
+    "ownerId": "USER002",
+    "vehicleName": "Maruti Swift",
+    "vehicleType": "Car",
+    "registrationNumber": "KA20CD5678",
+    "capacity": 5,
+    "pricePerDay": 1800,
+    "fuelType": "Petrol",
+    "city": "Udupi",
+    "features": ["Air Conditioning", "GPS"],
+    "images": [],
+    "isAvailable": true,
+    "createdAt": "2026-11-18T10:00:00Z",
+    "updatedAt": "2026-11-18T10:00:00Z"
+  }
+]

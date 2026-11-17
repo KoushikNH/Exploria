@@ -1,0 +1,27 @@
+
+[
+  {
+    "_id": "ALBUM001",
+    "userId": "USER001",
+    "tripId": null,
+    "title": "My Mangaluru Trip",
+    "description": "Beautiful memories from my coastal Karnataka trip.",
+    "photos": [
+      {
+        "photoUrl": "https://example.com/beach.jpg",
+        "caption": "Beautiful sunset at Panambur Beach",
+        "location": "Mangaluru",
+        "uploadedAt": "2026-11-17T15:00:00Z"
+      },
+      {
+        "photoUrl": "https://example.com/coast.jpg",
+        "caption": "Enjoying the coastal view",
+        "location": "Mangaluru",
+        "uploadedAt": "2026-11-17T16:00:00Z"
+      }
+    ],
+    "isPublic": true,
+    "createdAt": "2026-11-17T14:00:00Z",
+    "updatedAt": "2026-11-17T16:00:00Z"
+  }
+]

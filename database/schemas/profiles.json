@@ -1,0 +1,28 @@
+
+{
+  "collection": "profiles",
+  "description": "Stores additional tourist and local host profile information.",
+  "fields": {
+    "_id": "ObjectId",
+    "userId": "ObjectId (references users._id, required, unique)",
+    "profileType": {
+      "type": "String",
+      "allowedValues": ["tourist", "local_host"]
+    },
+    "phone": "String",
+    "profilePhoto": "String (URL)",
+    "bio": "String",
+    "city": "String",
+    "country": "String",
+    "languages": ["String"],
+    "interests": ["String"],
+    "createdAt": "Date",
+    "updatedAt": "Date"
+  },
+  "indexes": [
+    {
+      "field": "userId",
+      "unique": true
+    }
+  ]
+}

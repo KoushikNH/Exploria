@@ -1,0 +1,31 @@
+
+{
+  "collection": "expenses",
+  "description": "Stores individual and group travel expenses.",
+  "fields": {
+    "_id": "ObjectId",
+    "tripId": "ObjectId (references trips._id)",
+    "paidBy": "ObjectId (references users._id)",
+    "description": "String (required)",
+    "category": {
+      "type": "String",
+      "allowedValues": [
+        "food",
+        "transport",
+        "accommodation",
+        "tickets",
+        "shopping",
+        "other"
+      ]
+    },
+    "amount": "Number (required)",
+    "splitBetween": ["ObjectId (references users._id)"],
+    "expenseDate": "Date",
+    "createdAt": "Date",
+    "updatedAt": "Date"
+  },
+  "indexes": [
+    {"field": "tripId"},
+    {"field": "paidBy"}
+  ]
+}

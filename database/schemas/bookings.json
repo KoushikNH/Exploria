@@ -1,0 +1,41 @@
+
+{
+  "collection": "bookings",
+  "description": "Stores vehicle and experience reservations.",
+  "fields": {
+    "_id": "ObjectId",
+    "userId": "ObjectId (references users._id)",
+    "bookingType": "String (vehicle or experience)",
+    "itemId": "ObjectId (references vehicles or experiences)",
+    "startDate": "Date",
+    "endDate": "Date",
+    "numberOfPeople": "Number",
+    "totalAmount": "Number",
+    "bookingStatus": {
+      "type": "String",
+      "allowedValues": [
+        "pending",
+        "confirmed",
+        "cancelled",
+        "completed"
+      ],
+      "default": "pending"
+    },
+    "paymentStatus": {
+      "type": "String",
+      "allowedValues": [
+        "unpaid",
+        "paid",
+        "refunded"
+      ],
+      "default": "unpaid"
+    },
+    "createdAt": "Date",
+    "updatedAt": "Date"
+  },
+  "indexes": [
+    {"field": "userId"},
+    {"field": "bookingStatus"},
+    {"field": "startDate"}
+  ]
+}

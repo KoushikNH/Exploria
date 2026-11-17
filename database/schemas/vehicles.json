@@ -1,0 +1,29 @@
+
+{
+  "collection": "vehicles",
+  "description": "Stores transport and vehicle information available to travelers.",
+  "fields": {
+    "_id": "ObjectId",
+    "ownerId": "ObjectId (references users._id)",
+    "vehicleName": "String",
+    "vehicleType": "String",
+    "registrationNumber": "String",
+    "capacity": "Number",
+    "pricePerDay": "Number",
+    "fuelType": "String",
+    "city": "String",
+    "features": ["String"],
+    "images": ["String (URL)"],
+    "isAvailable": {
+      "type": "Boolean",
+      "default": true
+    },
+    "createdAt": "Date",
+    "updatedAt": "Date"
+  },
+  "indexes": [
+    {"field": "ownerId"},
+    {"field": "city"},
+    {"field": "isAvailable"}
+  ]
+}

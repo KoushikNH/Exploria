@@ -1,0 +1,27 @@
+
+[
+  {
+    "_id": "EXPENSE001",
+    "tripId": "TRIP001",
+    "paidBy": "USER001",
+    "description": "Lunch during the trip",
+    "category": "food",
+    "amount": 800,
+    "splitBetween": ["USER001", "USER002"],
+    "expenseDate": "2026-12-01T13:00:00Z",
+    "createdAt": "2026-12-01T13:00:00Z",
+    "updatedAt": "2026-12-01T13:00:00Z"
+  },
+  {
+    "_id": "EXPENSE002",
+    "tripId": "TRIP001",
+    "paidBy": "USER002",
+    "description": "Fuel expense",
+    "category": "transport",
+    "amount": 600,
+    "splitBetween": ["USER001", "USER002"],
+    "expenseDate": "2026-12-01T15:00:00Z",
+    "createdAt": "2026-12-01T15:00:00Z",
+    "updatedAt": "2026-12-01T15:00:00Z"
+  }
+]

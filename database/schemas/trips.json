@@ -1,0 +1,26 @@
+
+{
+  "collection": "trips",
+  "description": "Stores travel plans created by users.",
+  "fields": {
+    "_id": "ObjectId",
+    "userId": "ObjectId (references users._id)",
+    "tripName": "String (required)",
+    "destinations": ["ObjectId (references destinations._id)"],
+    "startDate": "Date",
+    "endDate": "Date",
+    "numberOfTravelers": "Number",
+    "budget": "Number",
+    "tripStatus": {
+      "type": "String",
+      "allowedValues": ["planned", "ongoing", "completed", "cancelled"],
+      "default": "planned"
+    },
+    "createdAt": "Date",
+    "updatedAt": "Date"
+  },
+  "indexes": [
+    {"field": "userId"},
+    {"field": "startDate"}
+  ]
+}

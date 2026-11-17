@@ -1,0 +1,31 @@
+
+[
+  {
+    "_id": "PROFILE001",
+    "userId": "USER001",
+    "profileType": "tourist",
+    "phone": "+919876543210",
+    "profilePhoto": "https://example.com/rahul.jpg",
+    "bio": "I love exploring new places.",
+    "city": "Mangaluru",
+    "country": "India",
+    "languages": ["English", "Hindi", "Kannada"],
+    "interests": ["Adventure", "Nature", "Photography"],
+    "createdAt": "2026-11-17T10:00:00Z",
+    "updatedAt": "2026-11-17T10:00:00Z"
+  },
+  {
+    "_id": "PROFILE002",
+    "userId": "USER002",
+    "profileType": "local_host",
+    "phone": "+919876543211",
+    "profilePhoto": "https://example.com/ananya.jpg",
+    "bio": "I enjoy introducing visitors to local culture.",
+    "city": "Udupi",
+    "country": "India",
+    "languages": ["English", "Kannada", "Tulu"],
+    "interests": ["Local Food", "Culture", "Heritage"],
+    "createdAt": "2026-11-17T11:00:00Z",
+    "updatedAt": "2026-11-17T11:00:00Z"
+  }
+]

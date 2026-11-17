@@ -1,0 +1,28 @@
+
+{
+  "collection": "experiences",
+  "description": "Stores activities and experiences offered by local hosts.",
+  "fields": {
+    "_id": "ObjectId",
+    "hostId": "ObjectId (references users._id)",
+    "destinationId": "ObjectId (references destinations._id)",
+    "title": "String (required)",
+    "description": "String",
+    "category": "String",
+    "pricePerPerson": "Number",
+    "durationHours": "Number",
+    "maxParticipants": "Number",
+    "languages": ["String"],
+    "images": ["String (URL)"],
+    "isActive": {
+      "type": "Boolean",
+      "default": true
+    },
+    "createdAt": "Date",
+    "updatedAt": "Date"
+  },
+  "indexes": [
+    {"field": "hostId"},
+    {"field": "destinationId"}
+  ]
+}
