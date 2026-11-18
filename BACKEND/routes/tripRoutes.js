@@ -1,11 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    res.json({
-        success: true,
-        message: "Trips API working!"
-    });
-});
+const {
+    createTrip,
+    getTrips
+} = require("../controllers/tripController");
+
+router.post("/", createTrip);
+router.get("/", getTrips);
 
 module.exports = router;

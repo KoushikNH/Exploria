@@ -1,0 +1,30 @@
+
+{
+  "collection": "albums",
+  "description": "Stores travel photo albums created by users.",
+  "fields": {
+    "_id": "ObjectId",
+    "userId": "ObjectId (references users._id)",
+    "tripId": "ObjectId (references trips._id, optional)",
+    "title": "String (required)",
+    "description": "String",
+    "photos": [
+      {
+        "photoUrl": "String (required)",
+        "caption": "String",
+        "location": "String",
+        "uploadedAt": "Date"
+      }
+    ],
+    "isPublic": {
+      "type": "Boolean",
+      "default": false
+    },
+    "createdAt": "Date",
+    "updatedAt": "Date"
+  },
+  "indexes": [
+    {"field": "userId"},
+    {"field": "tripId"}
+  ]
+}

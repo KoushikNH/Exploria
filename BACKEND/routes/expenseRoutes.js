@@ -1,11 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    res.json({
-        success: true,
-        message: "Expenses API working!"
-    });
-});
+const {
+    getExpenses,
+    addExpense
+} = require("../controllers/expenseController");
+
+router.get("/", getExpenses);
+router.post("/", addExpense);
 
 module.exports = router;

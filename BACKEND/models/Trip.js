@@ -1,3 +1,4 @@
+
 const mongoose = require("mongoose");
 
 const tripSchema = new mongoose.Schema({
@@ -14,9 +15,22 @@ const tripSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Destination"
     }],
-    startDate: Date,
-    endDate: Date,
-    totalBudget: Number,
+    startDate: {
+        type: Date,
+        required: true
+    },
+    endDate: {
+        type: Date,
+        required: true
+    },
+    numberOfTravelers: {
+        type: Number,
+        required: true
+    },
+    budget: {
+        type: Number,
+        required: true
+    },
     status: {
         type: String,
         enum: ["planned", "ongoing", "completed"],

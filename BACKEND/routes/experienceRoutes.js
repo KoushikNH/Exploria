@@ -1,11 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    res.json({
-        success: true,
-        message: "Experiences API working!"
-    });
-});
+const { getExperiences } = require("../controllers/experienceController");
+
+router.get("/", getExperiences);
 
 module.exports = router;

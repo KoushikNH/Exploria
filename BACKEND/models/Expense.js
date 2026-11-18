@@ -6,26 +6,32 @@ const expenseSchema = new mongoose.Schema({
         ref: "Trip",
         required: true
     },
-    userId: {
+    paidBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
         required: true
     },
-    title: {
+    description: {
         type: String,
         required: true
     },
+    category: {
+        type: String,
+        default: "other"
+    },
     amount: {
         type: Number,
-        required: true
+        required: true,
+        min: 0
     },
-    category: String,
-    date: {
+    splitBetween: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    }],
+    expenseDate: {
         type: Date,
         default: Date.now
-    },
-    paidBy: String,
-    notes: String
+    }
 }, {
     timestamps: true,
     collection: "expenses"

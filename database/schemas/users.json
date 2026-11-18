@@ -1,0 +1,29 @@
+
+{
+  "collection": "users",
+  "description": "Stores registration and login information for EXPLORER users.",
+  "fields": {
+    "_id": "ObjectId",
+    "name": "String",
+    "email": "String (required, unique)",
+    "passwordHash": "String (required)",
+    "role": {
+      "type": "String",
+      "allowedValues": ["tourist", "local_host", "admin"],
+      "default": "tourist"
+    },
+    "isVerified": {
+      "type": "Boolean",
+      "default": false
+    },
+    "createdAt": "Date",
+    "updatedAt": "Date"
+  },
+  "indexes": [
+    {
+      "field": "email",
+      "unique": true
+    }
+  ]
+}
+
