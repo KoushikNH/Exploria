@@ -1,10 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EXPLORER | Discover Beyond Destinations</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -15,336 +15,112 @@
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
 }
-
 :root {
     --primary: #087e72;
     --dark: #153c39;
     --light: #eff8f5;
     --orange: #f4a64b;
 }
-
-body {
-    background: #fafcfb;
-    color: #253b38;
-}
-
+body { background: #fafcfb; color: #253b38; }
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 7%;
-    background: white;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 15px #0000000c;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 7%; background: white; position: sticky;
+    top: 0; z-index: 100; box-shadow: 0 2px 15px #0000000c;
 }
-
-.logo {
-    font-size: 27px;
-    font-weight: 800;
-    color: var(--primary);
-    letter-spacing: 2px;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #344c47;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-nav a:hover {
-    color: var(--primary);
-}
-
+.logo { font-size: 27px; font-weight: 800; color: var(--primary); letter-spacing: 2px; }
+nav ul { display: flex; list-style: none; gap: 25px; }
+nav a { text-decoration: none; color: #344c47; font-size: 14px; font-weight: 500; }
+nav a:hover { color: var(--primary); }
 .btn {
-    background: var(--primary);
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
+    background: var(--primary); color: white; border: none;
+    padding: 12px 24px; border-radius: 8px; cursor: pointer;
+    text-decoration: none; display: inline-block;
 }
-
-.btn:hover {
-    background: var(--dark);
-}
-
+.btn:hover { background: var(--dark); }
 .hero {
-    min-height: 570px;
-    display: flex;
-    align-items: center;
-    padding: 70px 9%;
-    background:
-    linear-gradient(90deg, #102d2ad9, #102d2a35),
-    url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1')
-    center/cover;
+    min-height: 570px; display: flex; align-items: center; padding: 70px 9%;
+    background: linear-gradient(90deg, #102d2ad9, #102d2a35),
+    url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1') center/cover;
     color: white;
 }
-
-.hero-content {
-    max-width: 650px;
-}
-
-.hero h1 {
-    font-size: clamp(38px, 6vw, 65px);
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 28px;
-}
-
-.hero span {
-    color: #f9bd69;
-}
-
-section {
-    padding: 75px 8%;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.section-title h2 {
-    font-size: 32px;
-    color: var(--dark);
-}
-
-.section-title p {
-    color: #71817c;
-    margin-top: 10px;
-}
-
+.hero-content { max-width: 650px; }
+.hero h1 { font-size: clamp(38px, 6vw, 65px); line-height: 1.2; margin-bottom: 20px; }
+.hero p { font-size: 16px; line-height: 1.8; margin-bottom: 28px; }
+.hero span { color: #f9bd69; }
+section { padding: 75px 8%; }
+.section-title { text-align: center; margin-bottom: 40px; }
+.section-title h2 { font-size: 32px; color: var(--dark); }
+.section-title p { color: #71817c; margin-top: 10px; }
 .search-box {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    display: flex;
-    gap: 12px;
-    max-width: 800px;
-    margin: 35px auto 0;
+    background: white; padding: 20px; border-radius: 12px;
+    display: flex; gap: 12px; max-width: 800px; margin: 35px auto 0;
 }
-
 input, select {
-    padding: 13px;
-    border: 1px solid #dce8e3;
-    border-radius: 7px;
-    outline: none;
-    width: 100%;
-    background: white;
+    padding: 13px; border: 1px solid #dce8e3; border-radius: 7px;
+    outline: none; width: 100%; background: white;
 }
-
-.search-box input {
-    flex: 1;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
+.search-box input { flex: 1; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
 .card {
-    background: white;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 5px 25px #183d3510;
-    transition: .3s;
+    background: white; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 5px 25px #183d3510; transition: .3s;
 }
-
-.card:hover {
-    transform: translateY(-7px);
-}
-
-.card img {
-    width: 100%;
-    height: 210px;
-    object-fit: cover;
-}
-
-.card-content {
-    padding: 22px;
-}
-
-.card h3 {
-    color: var(--dark);
-    margin-bottom: 10px;
-}
-
-.card p {
-    font-size: 13px;
-    color: #71817c;
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
+.card:hover { transform: translateY(-7px); }
+.card img { width: 100%; height: 210px; object-fit: cover; }
+.card-content { padding: 22px; }
+.card h3 { color: var(--dark); margin-bottom: 10px; }
+.card p { font-size: 13px; color: #71817c; line-height: 1.8; margin-bottom: 15px; }
 .tag {
-    display: inline-block;
-    background: #e8f5ef;
-    color: var(--primary);
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 11px;
-    margin-bottom: 12px;
+    display: inline-block; background: #e8f5ef; color: var(--primary);
+    padding: 5px 10px; border-radius: 20px; font-size: 11px; margin-bottom: 12px;
 }
-
-.features {
-    background: var(--light);
-}
-
-.experience {
-    background: white;
-}
-
-.budget-area {
-    background: #edf6f2;
-}
-
+.features { background: var(--light); }
+.experience { background: white; }
+.budget-area { background: #edf6f2; }
 .budget-box {
-    background: white;
-    max-width: 650px;
-    margin: auto;
-    padding: 35px;
-    border-radius: 15px;
-    box-shadow: 0 5px 25px #183d3510;
+    background: white; max-width: 650px; margin: auto; padding: 35px;
+    border-radius: 15px; box-shadow: 0 5px 25px #183d3510;
 }
-
-.budget-box label {
-    display: block;
-    margin: 15px 0 7px;
-    font-size: 14px;
-}
-
+.budget-box label { display: block; margin: 15px 0 7px; font-size: 14px; }
 .result {
-    margin-top: 20px;
-    padding: 18px;
-    background: #e9f6ef;
-    border-radius: 9px;
-    color: var(--dark);
-    display: none;
+    margin-top: 20px; padding: 18px; background: #e9f6ef;
+    border-radius: 9px; color: var(--dark); display: none;
 }
-
-.memory {
-    background: white;
-    text-align: center;
-}
-
+.memory { background: white; text-align: center; }
 .upload-box {
-    border: 2px dashed #a7c9bb;
-    padding: 40px;
-    border-radius: 14px;
-    max-width: 650px;
-    margin: auto;
+    border: 2px dashed #a7c9bb; padding: 40px; border-radius: 14px;
+    max-width: 650px; margin: auto;
 }
-
-.upload-box input {
-    margin-top: 20px;
-}
-
+.upload-box input { margin-top: 20px; }
 #preview {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 20px;
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 12px; margin-top: 20px;
 }
-
-#preview img {
-    width: 130px;
-    height: 110px;
-    object-fit: cover;
-    border-radius: 9px;
-}
-
-.booking {
-    background: #f1f7f4;
-}
-
-.booking-card {
-    background: white;
-    padding: 28px;
-    border-radius: 12px;
-}
-
-.booking-card h3 {
-    margin-bottom: 12px;
-    color: var(--primary);
-}
-
-.booking-card input {
-    margin: 8px 0;
-}
-
-footer {
-    background: #153c39;
-    color: white;
-    text-align: center;
-    padding: 35px 15px;
-}
-
-footer p {
-    font-size: 13px;
-    margin-top: 10px;
-    color: #c4d5ce;
-}
-
+#preview img { width: 130px; height: 110px; object-fit: cover; border-radius: 9px; }
+.booking { background: #f1f7f4; }
+.booking-card { background: white; padding: 28px; border-radius: 12px; }
+.booking-card h3 { margin-bottom: 12px; color: var(--primary); }
+.booking-card input { margin: 8px 0; }
+footer { background: #153c39; color: white; text-align: center; padding: 35px 15px; }
+footer p { font-size: 13px; margin-top: 10px; color: #c4d5ce; }
 @media(max-width: 850px) {
-    nav {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    nav { flex-wrap: wrap; gap: 15px; }
+    nav ul { flex-wrap: wrap; gap: 12px; }
+    .grid { grid-template-columns: repeat(2, 1fr); }
 }
-
 @media(max-width: 600px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero {
-        min-height: 500px;
-    }
-
-    .search-box {
-        flex-direction: column;
-    }
-
-    section {
-        padding: 55px 6%;
-    }
+    .grid { grid-template-columns: 1fr; }
+    .hero { min-height: 500px; }
+    .search-box { flex-direction: column; }
+    section { padding: 55px 6%; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
 <nav>
     <div class="logo">EXPLORER.</div>
-
     <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#features">Features</a></li>
@@ -352,262 +128,156 @@ footer p {
         <li><a href="#destinations">Explore</a></li>
         <li><a href="#booking">Bookings</a></li>
     </ul>
-
     <a href="#booking" class="btn">Start Exploring</a>
 </nav>
 
-<!-- HERO -->
 <header class="hero" id="home">
     <div class="hero-content">
         <span>DISCOVER • EXPERIENCE • CONNECT</span>
         <h1>Travel Beyond Places, <span>Explore Cultures.</span></h1>
-
-        <p>
-            Discover hidden destinations, connect with local communities,
-            experience authentic traditions and create unforgettable memories.
-        </p>
-
+        <p>Discover hidden destinations, connect with local communities, experience authentic traditions and create unforgettable memories.</p>
         <a href="#destinations" class="btn">Explore Destinations →</a>
     </div>
 </header>
 
-<!-- SEARCH -->
 <section id="destinations">
     <div class="section-title">
         <h2>Where Do You Want To Go?</h2>
         <p>Discover beautiful places and unforgettable experiences.</p>
     </div>
-
     <div class="search-box">
-        <input type="text" id="placeSearch"
-        placeholder="Search destinations...">
-
+        <input type="text" id="placeSearch" placeholder="Search destinations...">
         <button class="btn" onclick="searchPlaces()">Search</button>
     </div>
+    <div id="searchResults" style="max-width:800px;margin:25px auto;"></div>
 </section>
 
-<!-- FEATURES -->
 <section class="features" id="features">
-
     <div class="section-title">
         <h2>Explore Our Features</h2>
         <p>Everything you need for a smarter and more meaningful journey.</p>
     </div>
-
     <div class="grid">
-
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81">
+            <img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81" alt="Culture">
             <div class="card-content">
                 <span class="tag">CULTURE & TRADITIONS</span>
                 <h3>Local Culture & Basic Needs</h3>
-                <p>
-                    Learn about local dress codes, food habits,
-                    customs, traditions and religious guidelines
-                    before visiting a destination.
-                </p>
+                <p>Learn about local dress codes, food habits, customs, traditions and religious guidelines before visiting a destination.</p>
                 <a href="#experiences" class="btn">Explore More</a>
             </div>
         </div>
-
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a">
+            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a" alt="Community">
             <div class="card-content">
                 <span class="tag">LOCAL COMMUNITY</span>
                 <h3>Local Experiences</h3>
-                <p>
-                    Connect with verified local hosts and enjoy
-                    food walks, pottery, heritage tours and
-                    traditional craft workshops.
-                </p>
+                <p>Connect with local hosts and enjoy food walks, pottery, heritage tours and traditional craft workshops.</p>
                 <a href="#experiences" class="btn">Explore More</a>
             </div>
         </div>
-
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e">
+            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e" alt="Memories">
             <div class="card-content">
                 <span class="tag">YOUR MEMORIES</span>
                 <h3>Digital Travel Memory Booth</h3>
-                <p>
-                    Upload and organize your travel photographs
-                    and videos in one personal digital album.
-                </p>
+                <p>Preview your travel photographs and organize your memories.</p>
                 <a href="#memory" class="btn">Explore More</a>
             </div>
         </div>
-
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Budget">
             <div class="card-content">
                 <span class="tag">SMART PLANNING</span>
                 <h3>AI Budget & Group Planner</h3>
-                <p>
-                    Estimate travel expenses, plan according
-                    to your budget and divide group expenses
-                    easily among travellers.
-                </p>
+                <p>Estimate travel expenses, plan according to your budget and divide group expenses.</p>
                 <a href="#budget" class="btn">Plan Your Trip</a>
             </div>
         </div>
-
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be">
+            <img src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be" alt="Destinations">
             <div class="card-content">
                 <span class="tag">DISCOVER MORE</span>
                 <h3>Destination & Events Explorer</h3>
-                <p>
-                    Discover hidden gems, festivals, local fairs,
-                    cultural celebrations and nearby attractions.
-                </p>
+                <p>Discover hidden gems, festivals, local fairs and cultural celebrations.</p>
                 <a href="#destinations" class="btn">Explore Places</a>
             </div>
         </div>
-
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c">
+            <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c" alt="Booking">
             <div class="card-content">
                 <span class="tag">TRAVEL BOOKINGS</span>
                 <h3>Bus & Homestay Booking</h3>
-                <p>
-                    Find local transport, explore homestays
-                    and discover comfortable accommodation
-                    options near your destination.
-                </p>
+                <p>Find local transport and explore accommodation options.</p>
                 <a href="#booking" class="btn">Book Now</a>
             </div>
         </div>
-
     </div>
 </section>
 
-<!-- LOCAL EXPERIENCES -->
-<div class="grid" id="experienceList">
-    <p>Loading local experiences...</p>
-</div>
-
+<section class="experience" id="experiences">
     <div class="section-title">
         <h2>Experience Like A Local</h2>
         <p>Discover the beauty of local culture through unique experiences.</p>
     </div>
-
-    <div class="grid">
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1">
-            <div class="card-content">
-                <h3>Traditional Food Walk</h3>
-                <p>Explore authentic local food and traditional flavours.</p>
-                <span class="tag">2–4 Hour Experience</span>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261">
-            <div class="card-content">
-                <h3>Pottery Workshop</h3>
-                <p>Learn traditional pottery from skilled local artisans.</p>
-                <span class="tag">2–4 Hour Experience</span>
-            </div>
-        </div>
-         <div class="card">
-            <img src="https://images.unsplash.com/photo-1511497584788-876760111969">
-            <div class="card-content">
-                <h3>Nature & Heritage Walk</h3>
-                <p>Discover beautiful trails and local stories with guides.</p>
-                <span class="tag">2–4 Hour Experience</span>
-            </div>
-        </div>
-
+    <div class="grid" id="experienceList">
+        <p>Loading local experiences...</p>
     </div>
 </section>
 
-<!-- BUDGET PLANNER -->
 <section class="budget-area" id="budget">
-
     <div class="section-title">
         <h2>Smart Travel Budget Planner</h2>
         <p>Plan your trip according to your budget and group size.</p>
     </div>
-
     <div class="budget-box">
-
         <label>Destination</label>
-        <input type="text" id="destination"
-        placeholder="Enter destination">
-
+        <input type="text" id="destination" placeholder="Enter destination">
         <label>Total Travel Budget (₹)</label>
-        <input type="number" id="totalBudget"
-        placeholder="Enter your budget">
-
+        <input type="number" id="totalBudget" placeholder="Enter your budget">
         <label>Number of Travellers</label>
-        <input type="number" id="people"
-        placeholder="Enter group size" min="1">
-
-        <button class="btn" onclick="calculateBudget()">
-            Calculate Budget
-        </button>
-
+        <input type="number" id="people" placeholder="Enter group size" min="1">
+        <button class="btn" onclick="calculateBudget()">Calculate Budget</button>
         <div class="result" id="budgetResult"></div>
         <div id="expenseList" style="margin-top:25px;">
-    <h3>Recent Trip Expenses</h3>
-    <p>Loading expenses...</p>
-</div>
-
+            <h3>Recent Trip Expenses</h3>
+            <p>Loading expenses...</p>
+        </div>
     </div>
 </section>
 
-<!-- MEMORY BOOTH -->
 <section class="memory" id="memory">
-
     <div class="section-title">
         <h2>Your Digital Travel Memory Booth</h2>
         <p>Every journey deserves to be remembered.</p>
     </div>
-
     <div class="upload-box">
         <h3>Upload Your Travel Memories</h3>
         <p>Choose your favourite travel photographs.</p>
-
-        <input type="file" id="photos"
-        accept="image/*" multiple onchange="showPhotos()">
-
+        <input type="file" id="photos" accept="image/*" multiple onchange="showPhotos()">
         <div id="preview"></div>
     </div>
-
 </section>
 
-<!-- BOOKING -->
 <section class="booking" id="booking">
-
     <div class="section-title">
         <h2>Travel & Stay Booking</h2>
         <p>Find your journey and stay in one place.</p>
     </div>
-
     <div class="grid">
-
         <div class="booking-card">
             <h3>Local Bus Booking</h3>
             <p>Find suitable local transportation.</p>
-
             <input type="text" placeholder="From">
             <input type="text" placeholder="To">
             <input type="date">
-
-            <button class="btn"
-            onclick="alert('Bus booking service is a frontend demo.')">
-                Search Buses
-            </button>
+            <button class="btn" onclick="alert('Bus booking service is a frontend demo.')">Search Buses</button>
         </div>
-
         <div class="booking-card">
             <h3>Homestay Explorer</h3>
             <p>Discover comfortable local accommodation.</p>
-
             <input type="text" placeholder="Enter destination">
             <input type="date">
-
             <select>
                 <option>Number of guests</option>
                 <option>1 Guest</option>
@@ -615,19 +285,12 @@ footer p {
                 <option>3 Guests</option>
                 <option>4+ Guests</option>
             </select>
-
-            <button class="btn"
-            onclick="alert('Homestay booking service is a frontend demo.')">
-                Find Homestays
-            </button>
+            <button class="btn" onclick="alert('Homestay booking service is a frontend demo.')">Find Homestays</button>
         </div>
-
         <div class="booking-card">
             <h3>Explore Local Events</h3>
             <p>Find festivals and cultural celebrations.</p>
-
             <input type="text" placeholder="Enter destination">
-
             <select>
                 <option>Choose Event Type</option>
                 <option>Festivals</option>
@@ -635,17 +298,11 @@ footer p {
                 <option>Cultural Events</option>
                 <option>Traditional Activities</option>
             </select>
-
-            <button class="btn"
-            onclick="document.querySelector('#destinations').scrollIntoView()">
-                Discover Events
-            </button>
+            <button class="btn" onclick="document.querySelector('#destinations').scrollIntoView()">Discover Events</button>
         </div>
-
     </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <h2>EXPLORER.</h2>
     <p>Explore Places. Embrace Cultures. Create Memories.</p>
@@ -659,16 +316,12 @@ async function loadExperiences() {
 
     try {
         const response = await fetch("/api/experiences");
-
-        if (!response.ok) {
-            throw new Error("Failed to load experiences");
-        }
+        if (!response.ok) throw new Error("Failed to load experiences");
 
         const data = await response.json();
-
         container.innerHTML = "";
 
-        if (data.experiences.length === 0) {
+        if (!data.experiences || data.experiences.length === 0) {
             container.textContent = "No experiences available.";
             return;
         }
@@ -681,46 +334,40 @@ async function loadExperiences() {
             content.className = "card-content";
 
             const title = document.createElement("h3");
-            title.textContent = experience.title;
+            title.textContent = experience.title || experience.name || "Local Experience";
 
             const description = document.createElement("p");
-            description.textContent = experience.description;
+            description.textContent = experience.description || "";
 
             const price = document.createElement("p");
-            price.textContent = "₹" + experience.pricePerPerson + " per person";
+            price.textContent = "₹" + (experience.pricePerPerson ?? experience.price ?? 0) + " per person";
 
             const duration = document.createElement("span");
             duration.className = "tag";
-            duration.textContent = experience.durationHours + " Hour Experience";
+            duration.textContent = (experience.durationHours || experience.duration || "Flexible") + " Hour Experience";
 
             content.append(title, description, price, duration);
             card.appendChild(content);
             container.appendChild(card);
         });
-
     } catch (error) {
         container.textContent = "Unable to load experiences.";
         console.error(error);
     }
 }
 
-document.addEventListener("DOMContentLoaded", loadExperiences);
-// Load trip expenses from MongoDB
+// Load expenses from MongoDB
 async function loadExpenses() {
     const container = document.getElementById("expenseList");
 
     try {
         const response = await fetch("/api/expenses");
-
-        if (!response.ok) {
-            throw new Error("Failed to fetch expenses");
-        }
+        if (!response.ok) throw new Error("Failed to fetch expenses");
 
         const data = await response.json();
-
         container.innerHTML = "<h3>Recent Trip Expenses</h3>";
 
-        if (data.expenses.length === 0) {
+        if (!data.expenses || data.expenses.length === 0) {
             container.textContent = "No expenses recorded yet.";
             return;
         }
@@ -728,7 +375,7 @@ async function loadExpenses() {
         let total = 0;
 
         data.expenses.forEach(expense => {
-            total += expense.amount;
+            total += Number(expense.amount || 0);
 
             const item = document.createElement("div");
             item.style.padding = "12px";
@@ -737,13 +384,13 @@ async function loadExpenses() {
             item.style.borderRadius = "8px";
 
             const title = document.createElement("strong");
-            title.textContent = expense.description;
+            title.textContent = expense.description || "Trip expense";
 
             const amount = document.createElement("p");
             amount.textContent = "Amount: ₹" + expense.amount;
 
             const category = document.createElement("p");
-            category.textContent = "Category: " + expense.category;
+            category.textContent = "Category: " + (expense.category || "other");
 
             item.append(title, amount, category);
             container.appendChild(item);
@@ -752,112 +399,90 @@ async function loadExpenses() {
         const totalText = document.createElement("h3");
         totalText.style.marginTop = "20px";
         totalText.textContent = "Total Expenses: ₹" + total;
-
         container.appendChild(totalText);
-
     } catch (error) {
         container.textContent = "Unable to load expenses.";
         console.error(error);
     }
 }
 
-document.addEventListener("DOMContentLoaded", loadExpenses);
-// Budget Calculator
+// Budget calculator
 function calculateBudget() {
-
-    let destination =
-    document.getElementById("destination").value;
-
-    let budget =
-    Number(document.getElementById("totalBudget").value);
-
-    let people =
-    Number(document.getElementById("people").value);
-
-    let result =
-    document.getElementById("budgetResult");
+    const destination = document.getElementById("destination").value.trim();
+    const budget = Number(document.getElementById("totalBudget").value);
+    const people = Number(document.getElementById("people").value);
+    const result = document.getElementById("budgetResult");
 
     if (!destination || budget <= 0 || people <= 0) {
         alert("Please enter all details correctly.");
         return;
     }
 
-    let perPerson = budget / people;
-
+    const perPerson = budget / people;
     result.style.display = "block";
-
     result.innerHTML = `
         <h3>YOUR TRAVEL PLAN</h3>
-        <p>Destination: ${destination}</p>
-        <p>Total Budget: ₹${budget.toLocaleString('en-IN')}</p>
+        <p>Destination: ${escapeHTML(destination)}</p>
+        <p>Total Budget: ₹${budget.toLocaleString("en-IN")}</p>
         <p>Travellers: ${people}</p>
-        <h3>Per Person: ₹${perPerson.toLocaleString('en-IN',
-        {maximumFractionDigits: 2})}</h3>
-        <p>Note: This is a basic budget calculation,
-        not an AI-generated cost estimate.</p>
+        <h3>Per Person: ₹${perPerson.toLocaleString("en-IN", {maximumFractionDigits: 2})}</h3>
+        <p>Note: This is a basic budget calculation, not an AI-generated cost estimate.</p>
     `;
 }
 
-// Travel Memory Preview
+function escapeHTML(value) {
+    return value.replace(/[&<>"']/g, char => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;",
+        '"': "&quot;", "'": "&#39;"
+    })[char]);
+}
+
+// Local photo preview only (not uploaded to server)
 function showPhotos() {
-
-    let files =
-    document.getElementById("photos").files;
-
-    let preview =
-    document.getElementById("preview");
-
+    const files = document.getElementById("photos").files;
+    const preview = document.getElementById("preview");
     preview.innerHTML = "";
 
     Array.from(files).forEach(file => {
-
         if (!file.type.startsWith("image/")) return;
-
-        let image = document.createElement("img");
-
+        const image = document.createElement("img");
         image.src = URL.createObjectURL(file);
-
+        image.alt = "Travel memory preview";
         preview.appendChild(image);
     });
 }
 
-// Destination Search
+// Search destinations from MongoDB
 async function searchPlaces() {
-    const search = document.getElementById("placeSearch")
-        .value.toLowerCase().trim();
+    const search = document.getElementById("placeSearch").value.toLowerCase().trim();
 
     if (!search) {
         alert("Please enter a destination.");
         return;
     }
 
-    const section = document.getElementById("destinations");
+    const output = document.getElementById("searchResults");
+    output.textContent = "Searching destinations...";
 
     try {
         const response = await fetch("/api/destinations");
-        const data = await response.json();
+        if (!response.ok) throw new Error("Failed to load destinations");
 
-        const results = data.destinations.filter(place =>
-            place.name.toLowerCase().includes(search) ||
-            place.description.toLowerCase().includes(search) ||
-            place.category.toLowerCase().includes(search)
+        const data = await response.json();
+        const destinations = data.destinations || [];
+
+        const results = destinations.filter(place =>
+            (place.name || "").toLowerCase().includes(search) ||
+            (place.description || "").toLowerCase().includes(search) ||
+            (place.category || "").toLowerCase().includes(search)
         );
 
-        let output = document.getElementById("searchResults");
-
-        if (!output) {
-            output = document.createElement("div");
-            output.id = "searchResults";
-            output.style.marginTop = "25px";
-            section.appendChild(output);
-        }
+        output.innerHTML = "";
 
         if (results.length === 0) {
             output.textContent = "No destinations found.";
             return;
         }
-
-        output.innerHTML = "";
 
         results.forEach(place => {
             const card = document.createElement("div");
@@ -866,26 +491,30 @@ async function searchPlaces() {
             card.style.marginBottom = "15px";
 
             const heading = document.createElement("h3");
-            heading.textContent = place.name;
+            heading.textContent = place.name || "Destination";
 
             const description = document.createElement("p");
-            description.textContent = place.description;
+            description.textContent = place.description || "";
 
             const category = document.createElement("p");
-            category.textContent = "Category: " + place.category;
+            category.textContent = "Category: " + (place.category || "General");
 
             const budget = document.createElement("p");
-            budget.textContent = "Estimated budget: ₹" + place.estimatedBudget;
+            budget.textContent = "Estimated budget: ₹" + (place.estimatedBudget ?? "Not available");
 
             card.append(heading, description, category, budget);
             output.appendChild(card);
         });
-
     } catch (error) {
-        alert("Unable to load destinations. Please try again.");
+        output.textContent = "Unable to load destinations. Please try again.";
         console.error(error);
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadExperiences();
+    loadExpenses();
+});
 </script>
 
 </body>

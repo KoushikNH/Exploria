@@ -10,11 +10,20 @@ const startServer = async () => {
     try {
         await connectDB();
 
-        app.listen(PORT, "0.0.0.0", () => {
+        const server = app.listen(PORT, "0.0.0.0", () => {
+            console.log("--------------------------------");
+            console.log("MongoDB connected successfully!");
             console.log(`Explorer server running on port ${PORT}`);
+            console.log("--------------------------------");
         });
+
+        server.on("error", (error) => {
+            console.error("Server error:", error.message);
+        });
+
     } catch (error) {
         console.error("Server startup failed:", error.message);
+        process.exit(1);
     }
 };
 
