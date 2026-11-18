@@ -1,6 +1,8 @@
+
 const path = require("path");
 const express = require("express");
 const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
 
@@ -8,9 +10,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../frontend")));
-// Welcome API
+
+// Welcome page
 app.get("/", (req, res) => {
-    res.send("Welcome to Explorer Backend!");
+    res.send("Welcome to Explorer!");
 });
 
 // Health check
@@ -30,5 +33,9 @@ app.use("/api/bookings", require("./routes/bookingRoutes"));
 app.use("/api/trips", require("./routes/tripRoutes"));
 app.use("/api/expenses", require("./routes/expenseRoutes"));
 
-module.exports = app;
+app.use("/api/hosts", require("./routes/hostRoutes"));
+app.use("/api/admin", require("./routes/adminRoutes"));
+app.use("/api/memories", require("./routes/memoryRoutes"));
+app.use("/api/events", require("./routes/eventRoutes"));
 
+module.exports = app;
