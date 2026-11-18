@@ -4,19 +4,18 @@ require("dotenv").config();
 const app = require("./app");
 const connectDB = require("./config/db");
 
+const PORT = process.env.PORT || 5000;
+
 const startServer = async () => {
     try {
-        // Step 1: Connect to MongoDB
+        // Connect to MongoDB
         await connectDB();
 
-        // Step 2: Get the port number
-        const PORT = process.env.PORT || 5000;
-
-        // Step 3: Start Express server
-        const server = app.listen(PORT, () => {
+        // Start Express server
+        const server = app.listen(PORT, "0.0.0.0", () => {
             console.log("--------------------------------");
-            console.log("MongoDB connection successful!");
-            console.log(`TerraNova server running on port ${PORT}`);
+            console.log("MongoDB connected successfully!");
+            console.log(`Explorer server running on port ${PORT}`);
             console.log("--------------------------------");
         });
 

@@ -1,0 +1,36 @@
+
+{
+  "collection": "events",
+  "description": "Stores local events, festivals and cultural programs.",
+  "fields": {
+    "_id": "ObjectId",
+    "title": "String (required)",
+    "description": "String",
+    "category": "String",
+    "organizerId": "ObjectId (references users._id, optional)",
+    "location": {
+      "venue": "String",
+      "city": "String",
+      "state": "String",
+      "country": "String",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": ["longitude", "latitude"]
+      }
+    },
+    "startDate": "Date",
+    "endDate": "Date",
+    "entryFee": "Number",
+    "images": ["String (URL)"],
+    "isActive": {
+      "type": "Boolean",
+      "default": true
+    },
+    "createdAt": "Date",
+    "updatedAt": "Date"
+  },
+  "indexes": [
+    {"field": "startDate"},
+    {"field": "location.coordinates", "type": "2dsphere"}
+  ]
+}

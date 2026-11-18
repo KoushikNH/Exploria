@@ -1,0 +1,51 @@
+
+{
+  "collection": "destinations",
+  "description": "Stores tourist destinations and travel information.",
+  "fields": {
+    "_id": "ObjectId",
+    "name": "String (required)",
+    "description": "String",
+    "category": {
+      "type": "String",
+      "allowedValues": [
+        "beach",
+        "hill_station",
+        "historical",
+        "religious",
+        "adventure",
+        "nature",
+        "other"
+      ]
+    },
+    "location": {
+      "city": "String",
+      "state": "String",
+      "country": "String",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": ["longitude", "latitude"]
+      }
+    },
+    "images": ["String (URL)"],
+    "bestTimeToVisit": "String",
+    "estimatedBudget": "Number",
+    "entryFee": "Number",
+    "facilities": ["String"],
+    "isActive": {
+      "type": "Boolean",
+      "default": true
+    },
+    "createdAt": "Date",
+    "updatedAt": "Date"
+  },
+  "indexes": [
+    {
+      "field": "name"
+    },
+    {
+      "field": "location.coordinates",
+      "type": "2dsphere"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+
+[
+  {
+    "_id": "DEST001",
+    "name": "Panambur Beach",
+    "description": "A popular beach in Mangaluru known for its beautiful coastline and sunset views.",
+    "category": "beach",
+    "location": {
+      "city": "Mangaluru",
+      "state": "Karnataka",
+      "country": "India",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [74.7973, 12.9366]
+      }
+    },
+    "images": [],
+    "bestTimeToVisit": "October to February",
+    "estimatedBudget": 500,
+    "entryFee": 0,
+    "facilities": ["Parking", "Food Stalls", "Water Sports"],
+    "isActive": true,
+    "createdAt": "2026-11-17T10:00:00Z",
+    "updatedAt": "2026-11-17T10:00:00Z"
+  },
+  {
+    "_id": "DEST002",
+    "name": "St. Mary's Island",
+    "description": "A beautiful island near Malpe known for its unique basalt rock formations.",
+    "category": "nature",
+    "location": {
+      "city": "Malpe",
+      "state": "Karnataka",
+      "country": "India",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [74.6733, 13.3811]
+      }
+    },
+    "images": [],
+    "bestTimeToVisit": "October to March",
+    "estimatedBudget": 1000,
+    "entryFee": 0,
+    "facilities": ["Boat Transport", "Sightseeing"],
+    "isActive": true,
+    "createdAt": "2026-11-17T10:00:00Z",
+    "updatedAt": "2026-11-17T10:00:00Z"
+  }
+]

@@ -1,0 +1,16 @@
+
+[
+  {
+    "_id": "TRIP001",
+    "userId": "USER001",
+    "tripName": "Coastal Karnataka Adventure",
+    "destinations": ["DEST001", "DEST002"],
+    "startDate": "2026-12-01T00:00:00Z",
+    "endDate": "2026-12-05T00:00:00Z",
+    "numberOfTravelers": 2,
+    "budget": 10000,
+    "tripStatus": "planned",
+    "createdAt": "2026-11-18T10:00:00Z",
+    "updatedAt": "2026-11-18T10:00:00Z"
+  }
+]

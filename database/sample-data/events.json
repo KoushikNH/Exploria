@@ -1,0 +1,27 @@
+
+[
+  {
+    "_id": "EVENT001",
+    "title": "Coastal Karnataka Food Festival",
+    "description": "Discover traditional coastal Karnataka dishes and local food culture.",
+    "category": "Food Festival",
+    "organizerId": null,
+    "location": {
+      "venue": "City Grounds",
+      "city": "Mangaluru",
+      "state": "Karnataka",
+      "country": "India",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [74.8560, 12.9141]
+      }
+    },
+    "startDate": "2026-12-10T10:00:00Z",
+    "endDate": "2026-12-12T20:00:00Z",
+    "entryFee": 100,
+    "images": [],
+    "isActive": true,
+    "createdAt": "2026-11-18T10:00:00Z",
+    "updatedAt": "2026-11-18T10:00:00Z"
+  }
+]
