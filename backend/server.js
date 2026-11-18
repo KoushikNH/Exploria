@@ -8,8 +8,10 @@ const PORT = process.env.PORT || 5000;
 
 const startServer = async () => {
     try {
+        // Connect to MongoDB
         await connectDB();
 
+        // Start Express server
         const server = app.listen(PORT, "0.0.0.0", () => {
             console.log("--------------------------------");
             console.log("MongoDB connected successfully!");
@@ -17,6 +19,7 @@ const startServer = async () => {
             console.log("--------------------------------");
         });
 
+        // Handle server errors
         server.on("error", (error) => {
             console.error("Server error:", error.message);
         });
@@ -27,4 +30,5 @@ const startServer = async () => {
     }
 };
 
+// Start the application
 startServer();

@@ -9,6 +9,8 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Serve frontend
 app.use(express.static(path.join(__dirname, "../frontend")));
 
 // Welcome page
@@ -32,7 +34,6 @@ app.use("/api/experiences", require("./routes/experienceRoutes"));
 app.use("/api/bookings", require("./routes/bookingRoutes"));
 app.use("/api/trips", require("./routes/tripRoutes"));
 app.use("/api/expenses", require("./routes/expenseRoutes"));
-
 app.use("/api/hosts", require("./routes/hostRoutes"));
 app.use("/api/admin", require("./routes/adminRoutes"));
 app.use("/api/memories", require("./routes/memoryRoutes"));
