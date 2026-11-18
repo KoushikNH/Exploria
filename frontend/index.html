@@ -121,6 +121,7 @@ footer p { font-size: 13px; margin-top: 10px; color: #c4d5ce; }
 
 <nav>
     <div class="logo">EXPLORER.</div>
+
     <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#features">Features</a></li>
@@ -128,9 +129,81 @@ footer p { font-size: 13px; margin-top: 10px; color: #c4d5ce; }
         <li><a href="#destinations">Explore</a></li>
         <li><a href="#booking">Bookings</a></li>
     </ul>
-    <a href="#booking" class="btn">Start Exploring</a>
-</nav>
 
+    <div style="display:flex;gap:10px;align-items:center;">
+        <button class="btn" onclick="openAuth('login')">Login</button>
+        <button class="btn" onclick="openAuth('register')">Sign Up</button>
+    </div>
+</nav>
+<!-- AUTHENTICATION MODAL -->
+<div id="authModal" style="
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.65);
+    z-index:1000;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+">
+    <div style="
+        background:white;
+        padding:35px;
+        border-radius:15px;
+        width:100%;
+        max-width:420px;
+        position:relative;
+    ">
+        <button onclick="closeAuth()" style="
+            position:absolute;
+            right:15px;
+            top:12px;
+            border:none;
+            background:none;
+            font-size:25px;
+            cursor:pointer;
+        ">&times;</button>
+
+        <h2 id="authTitle" style="color:#087e72;text-align:center;">
+            Login
+        </h2>
+
+        <form id="authForm" style="margin-top:25px;">
+
+            <div id="nameField" style="display:none;margin-bottom:15px;">
+                <input type="text" id="authName" placeholder="Full Name">
+            </div>
+
+            <div style="margin-bottom:15px;">
+                <input type="email" id="authEmail" placeholder="Email Address" required>
+            </div>
+
+            <div style="margin-bottom:15px;">
+                <input type="password" id="authPassword" placeholder="Password (minimum 8 characters)" required>
+            </div>
+
+            <div id="roleField" style="display:none;margin-bottom:15px;">
+                <select id="authRole">
+                    <option value="tourist">Tourist</option>
+                    <option value="local">Local Host</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn" style="width:100%;">
+                Continue
+            </button>
+
+            <p id="authMessage" style="margin-top:15px;text-align:center;"></p>
+        </form>
+
+        <p style="text-align:center;margin-top:20px;font-size:14px;">
+            <span id="authSwitchText">Don't have an account?</span>
+            <a href="#" id="authSwitch" onclick="switchAuth();return false;" style="color:#087e72;">
+                Sign Up
+            </a>
+        </p>
+    </div>
+</div>
 <header class="hero" id="home">
     <div class="hero-content">
         <span>DISCOVER • EXPERIENCE • CONNECT</span>
@@ -310,6 +383,127 @@ footer p { font-size: 13px; margin-top: 10px; color: #c4d5ce; }
 </footer>
 
 <script>
+    // Authentication
+let authMode = "login";
+
+function openAuth(mode) {
+    authMode = mode;
+    document.getElementById("authModal").style.display = "flex";
+    updateAuthForm();
+}
+
+function closeAuth() {
+    document.getElementById("authModal").style.display = "none";
+}
+
+function switchAuth() {
+    authMode = authMode === "login" ? "register" : "login";
+    updateAuthForm();
+}
+
+function updateAuthForm() {
+    const isRegister = authMode === "register";
+
+    document.getElementById("authTitle").textContent =
+        isRegister ? "Create Account" : "Welcome Back";
+
+    document.getElementById("nameField").style.display =
+        isRegister ? "block" : "none";
+
+    document.getElementById("roleField").style.display =
+        isRegister ? "block" : "none";
+
+    document.getElementById("authName").required = isRegister;
+
+    document.getElementById("authSwitchText").textContent =
+        isRegister ? "Already have an account?" : "Don't have an account?";
+
+    document.getElementById("authSwitch").textContent =
+        isRegister ? "Login" : "Sign Up";
+
+    document.getElementById("authMessage").textContent = "";
+}
+
+// Submit login or registration
+document.getElementById("authForm").addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const message = document.getElementById("authMessage");
+
+    const payload = {
+        email: document.getElementById("authEmail").value.trim(),
+        password: document.getElementById("authPassword").value
+    };
+
+    if (authMode === "register") {
+        payload.name = document.getElementById("authName").value.trim();
+        payload.role = document.getElementById("authRole").value;
+    }
+
+    message.style.color = "#087e72";
+    message.textContent = "Please wait...";
+
+    try {
+        const endpoint = authMode === "register"
+            ? "/api/auth/register"
+            : "/api/auth/login";
+
+        const response = await fetch(endpoint, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message || "Authentication failed.");
+        }
+
+        localStorage.setItem("explorerToken", data.token);
+        localStorage.setItem("explorerUser", JSON.stringify(data.user));
+
+        message.style.color = "green";
+        message.textContent = data.message;
+
+        setTimeout(() => {
+            closeAuth();
+            updateAuthNavigation();
+        }, 1000);
+
+    } catch (error) {
+        message.style.color = "red";
+        message.textContent = error.message;
+    }
+});
+
+// Update navigation after login
+function updateAuthNavigation() {
+    const user = JSON.parse(localStorage.getItem("explorerUser") || "null");
+
+    const authButtons = document.querySelector('nav > div:last-child');
+
+    if (!authButtons) return;
+
+    if (user) {
+        authButtons.innerHTML = `
+            <span style="font-size:13px;">Hi, ${escapeHTML(user.name)}</span>
+            <button class="btn" onclick="logoutUser()">Logout</button>
+        `;
+    }
+}
+
+// Logout
+function logoutUser() {
+    localStorage.removeItem("explorerToken");
+    localStorage.removeItem("explorerUser");
+    location.reload();
+}
+
+// Restore login state after refresh
+document.addEventListener("DOMContentLoaded", updateAuthNavigation);
 // Load experiences from MongoDB
 async function loadExperiences() {
     const container = document.getElementById("experienceList");
